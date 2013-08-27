@@ -24,3 +24,11 @@ def get_pnl(name,close):
 def add_pnl(val1=0,val2=0):
     return val1+val2
 
+
+@celery.task
+def add_list(values):
+    result=0
+    for value in values:
+        result+=value
+    return result
+
